@@ -1,0 +1,27 @@
+const Tx = require('ethereumjs-tx').Transaction;
+const Web3 = require('web3');
+const web3 = new Web3('https://ropsten.infura.io/v3/66a470c1158f441cac9c502cd63d4b9b');
+
+const account = '0xfCDf7D4df540764c8f7dC775892FfD6E9CB046C3';
+const privateKey = Buffer.from('3fde1345504923630673sa70f990f78caa40c79b4412a3e1cf8eb3f7055982dd', 'hex');
+
+const contractByteCode = '0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061037a806100606000396000f3fe608060405260043610610051576000357c0100000000000000000000000000000000000000000000000000000000900480635c4df43214610056578063a84638b7146100b9578063bd9c3b3614610103575b600080fd5b34801561006257600080fd5b506100b76004803603604081101561007957600080fd5b8101908080356bffffffffffffffffffffffff1916906020019092919080356bffffffffffffffffffffffff1916906020019092919050505061017f565b005b3480156100c557600080fd5b50610101600480360360208110156100dc57600080fd5b8101908080356bffffffffffffffffffffffff19169060200190929190505050610248565b005b34801561010f57600080fd5b5061014b6004803603602081101561012657600080fd5b8101908080356bffffffffffffffffffffffff191690602001909291905050506102fa565b60405180826bffffffffffffffffffffffff19166bffffffffffffffffffffffff1916815260200191505060405180910390f35b3373ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156101da57600080fd5b8060016000846bffffffffffffffffffffffff19166bffffffffffffffffffffffff1916815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff02191690836c01000000000000000000000000900402179055505050565b3373ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156102a357600080fd5b60016000826bffffffffffffffffffffffff19166bffffffffffffffffffffffff1916815260200190815260200160002060006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905550565b600060016000836bffffffffffffffffffffffff19166bffffffffffffffffffffffff1916815260200190815260200160002060009054906101000a90046c0100000000000000000000000002905091905056fea165627a7a72305820bf4e58d72e2ba93bf9fd9e51bfeff8db53366e23eb1d922c8619f1a856ca73f10029';
+
+web3.eth.getTransactionCount(account, (err,txCount) => {
+  const txObject = {
+    nonce: web3.utils.toHex(txCount),
+    gasLimit: web3.utils.toHex(3000000),
+    gasPrice: web3.utils.toHex(web3.utils.toWei('10','gwei')),
+    data: contractByteCode
+  };
+
+  const tx = new Tx(txObject,{'chain':'ropsten'});
+  tx.sign(privateKey);
+  const serializedTx = tx.serialize();
+
+  const txData = '0x' + serializedTx.toString('hex');
+
+  web3.eth.sendSignedTransaction(txData, (err,txHash) => {
+    console.log('Err: ' + err + ' Transaction hash: ', txHash);
+  })
+})

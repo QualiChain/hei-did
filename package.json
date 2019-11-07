@@ -1,0 +1,15 @@
+{
+  "name": "access-control_identity-management",
+  "version": "1.0.0",
+  "description": "Access control and identity management",
+  "main": "registerContract_script.js",
+  "scripts": {
+    "start": "node registerContract_script.js"
+  },
+  "author": "Diogo Serranito",
+  "license": "ISC",
+  "dependencies": {
+    "ethereumjs-tx": "^2.1.1",
+    "web3": "^1.2.2"
+  }
+}
