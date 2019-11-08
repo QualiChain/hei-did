@@ -1,6 +1,7 @@
 # access-control
-Access Control and Identity Management
+The Access Control and Identity Management component provides the possibility for Higher Education Institutions (HEI) to register their corresponding Decentralized Identifier (DID) in a Management Smart Contract. This contract will store the associations between a Higher Education Institution's DID and its respective smart contract where the education certificates are registered.
 
+# Installation
 - To start, make sure you have Node.js installed. If not, go to https://nodejs.org/en/ to download it.
 
 - To communicate with the Ethereum network you need to connect to a Ethereum node. This node can be running on your machine or externally. In this case, the code was developed to use a external node provided by Infura. Therefore, create an account on "https://infura.io" and create a new project.
@@ -9,6 +10,7 @@ Access Control and Identity Management
 
 - Next, use the "npm install" command inside the "Access Control and Identity Management" directory to install the needed modules.
 
+# Testing
 - Now, create your Ethereum account. For that, open the "createAccount_script.js" and replace the node endpoint link with yours. Save the file and run the script by inserting "node createAccount_script.js" in the command line. This will return the new account's information, make sure to save it.
 
 - To perform transactions with this account, you need Ether since the account has 0 on creation. There is the need to ask for a funding from a faucet. Go to "https://faucet.ropsten.be/" type your account's address and press send me Ether.
