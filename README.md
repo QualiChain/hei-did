@@ -3,7 +3,7 @@ The Access Control and Identity Management component provides the possibility fo
 
 ## Docker Configuration
 
-- For demonstration purposes, a pre-configuration was performed to facilitate the following instructions. Therefore, a Ethereum account was already created and a Management Smart Contract was deployed in the Ethereum blockchain.
+- For demonstration purposes, a pre-configuration was performed to facilitate the following instructions. Therefore, a Ethereum account was already created (address -> "0x907bd4575c07ECc806eF98F9364EE7C042E23872") and a Management Smart Contract was deployed in the Ethereum blockchain.
 
 - To start, open the "registerContract_script.js" file and replace the "id" variable to the third argument in the Ethereum DID (for example -> did:ethr:0x2CefB619218825C0c670D8E77f7039e0693E1dDC) you are trying to register.
 
