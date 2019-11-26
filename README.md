@@ -5,10 +5,6 @@ The Access Control and Identity Management component provides the possibility fo
 
 - For demonstration purposes, a pre-configuration was performed to facilitate the following instructions. Therefore, a Ethereum account was already created (address -> "0x907bd4575c07ECc806eF98F9364EE7C042E23872") and a Management Smart Contract was deployed in the Ethereum blockchain.
 
-- To start, open the "registerContract_script.js" file and replace the "id" variable to the third argument in the Ethereum DID (for example -> did:ethr:0x2CefB619218825C0c670D8E77f7039e0693E1dDC) you are trying to register.
-
-- Afterwards, replace the "add" variable with the Ethereum address of the contract you want to associate with the DID.
-
 - Now you can run Docker and open this project's directory in a new terminal.
 
 - To build the Docker image insert into the terminal the following command:
@@ -53,9 +49,9 @@ In case you wish to perform the whole configuration process in your machine with
 
 - Open the "registerContract_script.js" file and again replace the endpoint, account variable, private key first argument and the new contract address.
 
-- Now replace the id variable to the third argument in the Ethereum DID (for example -> did:ethr:0x2CefB619218825C0c670D8E77f7039e0693E1dDC) you are trying to register.
+- Now replace the "id" variable to the third argument in the Ethereum DID (for example -> did:ethr:0x2CefB619218825C0c670D8E77f7039e0693E1dDC) you are trying to register.
 
-- Replace the add variable with the Ethereum address of the contract you want to associate with the DID.
+- Replace the "add" variable with the Ethereum address of the contract you want to associate with the DID.
 
 - Save the file and run it by typing in the command line "npm start".
 
