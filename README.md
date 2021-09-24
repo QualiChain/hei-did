@@ -1,5 +1,6 @@
-# access-control
-The Access Control and Identity Management component provides the possibility for Higher Education Institutions (HEI) to register their corresponding Decentralized Identifier (DID) in a Management Smart Contract. This contract will store the associations between a Higher Education Institution's DID and its respective smart contract where the education certificates are registered.
+# HEI-DID 
+This repository contains the funcionalities for allowing Higher Education Institutions (HEI) to register their corresponding Decentralized Identifier (DID) in a Management Smart Contract. This contract will store the associations between a Higher Education Institution's DID and its respective smart contract where the education certificates are registered.
+
 
 ## Docker Configuration
 
